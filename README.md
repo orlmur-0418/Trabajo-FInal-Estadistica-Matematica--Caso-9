@@ -37,29 +37,6 @@ Enlace directo: https://youtu.be/tekDNd4a32k
 
 ---
 
-## Planteamiento
-
-Estudiamos la composición de cuatro delitos: asesinato (1), hurto a mano armada (2), secuestro (3) y extorsión (4).
-Cada caso registrado es un ensayo con $X_i \sim \text{Categórica}(\boldsymbol\theta)$ y los conteos
-$\mathbf Y \sim \text{Multinomial}(n; \boldsymbol\theta)$, con $n = 500$. El parámetro de interés es
-
-$$\tau_j = \frac{\theta_j}{\theta_2}, \qquad j = 1, 3, 4,$$
-
-el número de casos del delito $j$ por cada hurto a mano armada. Los datos se simularon con
-$\boldsymbol\theta = (0.24,\ 0.40,\ 0.08,\ 0.28)$ y semilla 2048, y se obtuvieron los conteos $\mathbf y = (124,\ 188,\ 44,\ 144)$.
-
-## Resultados principales
-
-| | Asesinato $\tau_1$ | Secuestro $\tau_3$ | Extorsión $\tau_4$ |
-|---|---|---|---|
-| Valor generador | 0.60 | 0.20 | 0.70 |
-| Estimación MV, $\hat\tau_j = Y_j / Y_2$ | 0.6596 | 0.2340 | 0.7660 |
-| Intervalo score condicional del 98 % | [0.5044, 0.8626] | [0.1589, 0.3447] | [0.5924, 0.9903] |
-| Valor p, prueba UMP condicional | 1.73 × 10⁻⁴ | 1.09 × 10⁻²² | 9.07 × 10⁻³ |
-| Decisión ($H_0: \tau_j \ge 1$, $\alpha = 0.02$) | Rechazar | Rechazar | Rechazar |
-
-Se rechazan las tres hipótesis nulas; por tanto, al nivel 0.02, el hurto a mano armada es el delito más frecuente de los cuatro.
-
 ## Estructura del repositorio
 
 ```
@@ -75,17 +52,3 @@ resultados/    tablas (.csv), gráficas (.png) y objetos de R (.rds)
 | `fase3_pruebas_hipotesis.R` | 8 y 9: pruebas de Wald, potencia, errores tipo I y II y prueba UMP |
 | `figuras_articulo.R` | Figuras 1 y 2 del artículo |
 | `razon_extorsion_asesinato.R` | Cálculos complementarios citados en el artículo |
-
-## Cómo reproducir los resultados
-
-Se necesita R (versión 4.6.1); solo se usan los paquetes base. Desde la carpeta `codigo`:
-
-```r
-setwd("codigo")
-source("fase3_pruebas_hipotesis.R")   # ejecuta las fases 1, 2 y 3 en orden
-```
-
-Para generar además las figuras del artículo (en PDF, dentro de `resultados`) basta ejecutar `source("figuras_articulo.R")`, que corre la misma cadena.
-
-Las semillas están fijas (2048 para la muestra y el bootstrap; 20262, 20263 y 20264 para los Monte Carlo),
-de modo que se obtienen exactamente las tablas y gráficas de la carpeta `resultados`.
