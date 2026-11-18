@@ -1,0 +1,4 @@
+"parametro","delito","y_j","y_2","s","tau_hat","pi_hat","Z_wald_original","Z_wald_log","p_wald_original","p_wald_log","c_ump","gamma_ump","p_ump_condicional","decision.Wald_original","decision.Wald_log","decision.UMP_aleatorizada","decision.UMP_no_aleatorizada"
+"tau_1","asesinato",124,188,312,0.6595745,0.3974359, -4.461396,-3.597272,4.071376e-06,1.607864e-04,138,0.3504404,1.731129e-04,1,1,1,1
+"tau_3","secuestro", 44,188,232,0.2340426,0.1896552,-19.542093,-8.671682,2.408282e-85,2.128914e-18,100,0.8619303,1.093093e-22,1,1,1,1
+"tau_4","extorsion",144,188,332,0.7659574,0.4337349, -2.759188,-2.407676,2.897258e-03,8.027221e-03,147,0.7862421,9.072318e-03,1,1,1,1

@@ -1,0 +1,10 @@
+"parametro","delito","valor"
+"theta_1","asesinato",0.24
+"theta_2","hurto_mano_armada",0.4
+"theta_3","secuestro",0.08
+"theta_4","extorsion",0.28
+"tau_1","asesinato / hurto_mano_armada",0.6
+"tau_3","secuestro / hurto_mano_armada",0.2
+"tau_4","extorsion / hurto_mano_armada",0.7
+"n","",500
+"semilla","",2048
